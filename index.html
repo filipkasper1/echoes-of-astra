@@ -2575,6 +2575,18 @@ body::before { content: ''; position: fixed; inset: 0; z-index: 89; pointer-even
 .app-menu .vs-side > .field { min-width: 0; }
 .app-menu .vs-side > .field input { min-width: 0; width: 100%; max-width: 100%; box-sizing: border-box; }
 
+/* ───────── portrait tablets: stack the title like on phones, but large ───────── */
+@media (orientation: portrait) and (min-width: 700px) and (min-height: 1000px) {
+  .app-menu .menu-inner.kv { grid-template-columns: minmax(0, 1fr); justify-items: stretch; width: min(720px, 100%); max-width: 720px; gap: 34px; }
+  .app-menu .kv-logo { transform: rotate(-3deg); }
+  .app-menu .logotype { font-size: clamp(5rem, 13vw, 8.5rem); }
+  .app-menu .menu-btns { gap: 12px; }
+  .mtab .mt-in { padding-block: 14px; }
+  .mtab .lbl { font-size: 1.7rem; }
+  .app-menu .mtab.primary .lbl { font-size: 2rem; }
+  .mtab small { font-size: .9rem; }
+}
+
 /* ═════════════ online.css — online lobby (.online inside .app-menu) and in-match network overlays (.net-*) ═════════════
    Uses the shared tokens (--neon-c / --neon-m / --signal / --hud-line / --plate / --txt-dim, fonts) so themes restyle it. */
 
